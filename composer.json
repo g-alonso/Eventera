@@ -1,0 +1,24 @@
+{
+    "name": "g-alonso/eventera",
+    "type": "Event Dispatcher",
+    "description": "Eventera, event dispatcher",
+    "keywords": ["event", "dispatcher", "simple"],
+    "homepage": "https://github.com/g-alonso/Eventera",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Gabriel Alonso",
+            "email": "gbr.alonso@gmail.com",
+            "homepage": "https://github.com/g-alonso",
+            "role": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Eventera": "src"
+        }
+    }
+}
