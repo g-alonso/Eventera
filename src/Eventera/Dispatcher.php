@@ -27,50 +27,50 @@ namespace Eventera;
  */
 class Dispatcher
 {
-	/**	
-	 * @var array $listeners listeners
-	*/
-	private $listeners = array();	
+    /**    
+     * @var array $listeners listeners
+    */
+    private $listeners = array();    
 
-	/**
-	* Add Listener
-	*
-	* @param string $listenerCode event code
-	* @param mixed  $listener     listener
-	* 
-	* @return void
-	*/
-	public function addListener($eventCode, $listener)
-	{
-		$this->listeners[$eventCode][] = $listener; 
-	}
+    /**
+    * Add Listener
+    *
+    * @param string $listenerCode event code
+    * @param mixed  $listener     listener
+    * 
+    * @return void
+    */
+    public function addListener($eventCode, $listener)
+    {
+        $this->listeners[$eventCode][] = $listener; 
+    }
 
-	/**
-	* Dispatch
-	*
-	* @param string $eventCode eventCode
-	* @param Event  $event     event
-	*
-	* @return void
-	*/
-	public function dispatch($eventCode, Event $event=null)
-	{
+    /**
+    * Dispatch
+    *
+    * @param string $eventCode eventCode
+    * @param Event  $event     event
+    *
+    * @return void
+    */
+    public function dispatch($eventCode, Event $event=null)
+    {
 
-		if(!isset($this->listeners[$eventCode])){
-			return $event;
-		}
+        if(!isset($this->listeners[$eventCode])){
+            return $event;
+        }
 
-		if (null === $event) {
+        if (null === $event) {
             $event = new Event();
         }
 
-		foreach ($this->listeners[$eventCode] as $listener) {
+        foreach ($this->listeners[$eventCode] as $listener) {
 
             call_user_func($listener, $event);
 
             if ($event->isPropagationStopped()) {
-            	break;
+                break;
             }
         }
-	}
+    }
 }

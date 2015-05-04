@@ -23,9 +23,9 @@ class MyEvent extends Event
 
 class MyListener{
 
-	function listenerMethod(MyEvent $event){
-		echo "Order N: ".$event->getEventData();
-	}
+    function listenerMethod(MyEvent $event){
+        echo "Order N: ".$event->getEventData();
+    }
 }
 
 $dispatcher = new Dispatcher();
