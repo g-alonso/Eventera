@@ -1,0 +1,2 @@
+# Eventera
+Simple event dispatcher
