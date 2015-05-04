@@ -46,7 +46,7 @@ class DispatcherTest extends \PHPUnit_Framework_TestCase
     	
         $this->dispatcher->addListener('test.run', function (Event $event)  use ($that) {
 
-            $this->assertEquals("NJFHF2012", $event->getEventData());
+            $that->assertEquals("NJFHF2012", $event->getEventData());
 
         });
 
